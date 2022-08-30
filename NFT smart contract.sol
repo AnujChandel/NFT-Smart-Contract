@@ -14,7 +14,7 @@ contract Anuj is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
     constructor() ERC721("Anuj", "Aj") {}
     uint32 MAX_SUPPLY = 10000;
-    mapping(address => uint8) private map;
+    mapping(address => uint8) private map;  // Mapping to monitor the NFTs minted by an user
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         require(tokenId <= MAX_SUPPLY,"Sorry all NFTs have been minted"); // Not more than 10000 NFTs should be minted
